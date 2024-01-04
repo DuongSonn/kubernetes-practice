@@ -1,0 +1,18 @@
+# pod defination yaml
+apiVersion: Version of Kubernetes API to create object
+kind: type of object to create
+metadata: data of object
+  name: name of the object
+  labels: use to filter the object 
+    app:
+spec: aditional information of the object
+  template: (replication controller) setting of pod use in replication contoller
+    metadata: data of object
+      name: name of the object
+      labels: use to filter the object 
+        app:
+    spec: aditional information of the object
+      containers:
+      - name:
+        image:
+  replicas: number of replica use for pod
