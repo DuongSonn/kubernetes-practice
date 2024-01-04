@@ -29,3 +29,6 @@
 - kubectl describe replicaset `RS name`: get RS detail
 - kubectl edit rs `RES name`: edit RS
 
+## CMD Deployment:
+
+
