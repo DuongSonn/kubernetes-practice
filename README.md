@@ -17,5 +17,13 @@
 - kubectl apply -f `file name`: apply changes to pod using yaml file
 
 ## CMD ReplicaSets:
-### Replication controller: provides high availability, load balancing, scaling
+### Replication controller(RC): provides high availability, load balancing, scaling pods
+- kubectl create -f `file name`: create RC using file
+- kubectl get replicationcontroller: get list of RC
+### ReplicaSet(RS):
+- kubectl create -f `file name`: create RS using file
+- kubectl get replicaset: get list of RS
+- kubectl replace -f `file name`: apply changes to RS using file
+- kubectl scale --replicas=6 -f `file name`: apply change to replicas of RS created by using file and the file
+- kubectl delete replicaset `RS name`: delete RS and all underlying PODS
 
