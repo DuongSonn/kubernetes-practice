@@ -1,6 +1,6 @@
 # pod defination yaml
-apiVersion: Version of Kubernetes API to create object
-kind: type of object to create
+apiVersion: apps/v1 #Version of Kubernetes API to create object
+kind: ReplicaSet #type of object to create
 metadata: data of object
   name: name of the object
   labels: use to filter the object 
