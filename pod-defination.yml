@@ -6,6 +6,6 @@ metadata: data of object
   labels: use to filter the object 
     app:
 spec: aditional information of the object
-  containers:
+  containers: (pod) list of container use to creat the object
     - name:
       image:
