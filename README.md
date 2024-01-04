@@ -26,4 +26,5 @@
 - kubectl replace -f `file name`: apply changes to RS using file
 - kubectl scale --replicas=6 -f `file name`: apply change to replicas of RS created by using file and the file
 - kubectl delete replicaset `RS name`: delete RS and all underlying PODS
+- kubectl describe replicaset `RS name`: get RS detail
 
