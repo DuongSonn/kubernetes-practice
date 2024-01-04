@@ -17,4 +17,5 @@
 - kubectl apply -f `file name`: apply changes to pod using yaml file
 
 ## CMD ReplicaSets:
+### Replication controller: provides high availability, load balancing, scaling
 
