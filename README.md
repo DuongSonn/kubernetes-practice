@@ -41,4 +41,5 @@
 ### CMD:
 - kubectl create -f `file name`: create Deployment using file
 - kubectl get deployments: get list of Deployment
+### Update and Rollback
 
