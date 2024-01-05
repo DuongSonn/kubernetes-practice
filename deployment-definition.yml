@@ -1,0 +1,20 @@
+apiVersion: apps/v1 #Version of Kubernetes API to create object
+kind: Deployment #type of object to create
+metadata: data of object
+  name: name of the object
+  labels: use to filter the object 
+    app:
+spec: aditional information of the object
+  template: (replication set) setting of pod use in replica set
+    metadata: data of object
+      name: name of the object
+      labels: use to filter the object 
+        app:
+    spec: aditional information of the object
+      containers:
+      - name:
+        image:
+  replicas: number of replica use for pod
+  selector: pod under replica set. This can be pod that is not created using template
+    matchLabels: lables of pod that will be under replica set
+      type: 
