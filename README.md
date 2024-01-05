@@ -3,6 +3,7 @@
 - kubectl cluster-info: get cluster info
 - kubectl get nodes: get list nodes
 - kubectl get nodes -o wide: get list nods with more info
+- kubectl get all: get all created object
   
 ## CMD Pod:
 - kubectl run `pod name`: deploy pod
@@ -30,5 +31,14 @@
 - kubectl edit rs `RES name`: edit RS
 
 ## CMD Deployment:
-
+### Stategy:
+- Recreate:Terminates all the pods and replaces them with the new version
+- Rolling: Replaces pods running the old version of the application with the new version without downtime
+- Canary: New version is rolled out slowly, creating new replicas replacing the old ones. This involves deploying a new version of the application alongside the old one, with the old version of the application serving most users and the newer version serving a small pool of test users
+- A/B: Similar to a Canary deployment, using an A/B deployment, you can target a given subsection of users based on some target parameters (usually the HTTP headers or a cookie)
+- Shadow: A new version of an application is deployed alongside the existing production version, primarily for monitoring and testing purposes
+- Blue/Green: Deploying the new application version (green) alongside the old one (blue). A load balancer in the form of the service selector object is used to direct the traffic to the new application (green) instead of the old one
+### CMD:
+- kubectl create -f `file name`: create Deployment using file
+- kubectl get deployments: get list of Deployment
 
