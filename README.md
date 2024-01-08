@@ -41,5 +41,17 @@
 ### CMD:
 - kubectl create -f `file name`: create Deployment using file
 - kubectl get deployments: get list of Deployment
+- kubectl apply -f `file name`: apply update for deployment
 ### Update and Rollback
+- kubectl rollout status deployment/`name`: get rollout deployment status
+- kubectl rollout history deployment/`name`: get rollout deployment history
+- kubectl rollout undo deployment/`name`: rollback rollout deployment
+
+## Networking
+- Each node has its own IP Address
+- Each pod has its own IP Address. Pod's IP adress is unique in 1 node but can be repeated in another node => We need to assign IP for Pod ourselves
+- All pods can communicate with another without NAT
+- All nodes can communicate with pod and the other way around without NAT
+
+## Serivces
 
