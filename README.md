@@ -56,7 +56,7 @@
 ## Serivces
 - NodePort: Make internal port accessible on the port of node
 - ClusterIP: Create virtual IP inside cluster to enable communication between different POD
-- LoadBalancer:
+- LoadBalancer: Helper redirect user request to node
 ### CMD:
 - kubectl create -f `file name`: create Service using file
 - kubectl get services: get list of services
