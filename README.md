@@ -54,4 +54,9 @@
 - All nodes can communicate with pod and the other way around without NAT
 
 ## Serivces
-
+- NodePort: Make internal port accessible on the port of node
+- ClusterIP: Create virtual IP inside cluster to enable communication between different POD
+- LoadBalancer:
+### CMD:
+- kubectl create -f `file name`: create Service using file
+- kubectl get services: get list of services
