@@ -1,4 +1,4 @@
-# kubernetes-practice
+# Kubernetes
 ## CMD basic:
 - kubectl cluster-info: get cluster info
 - kubectl get nodes: get list nodes
@@ -43,9 +43,9 @@
 - kubectl get deployments: get list of Deployment
 - kubectl apply -f `file name`: apply update for deployment
 ### Update and Rollback
-- kubectl rollout status deployment/`name`: get rollout deployment status
-- kubectl rollout history deployment/`name`: get rollout deployment history
-- kubectl rollout undo deployment/`name`: rollback rollout deployment
+- kubectl rollout status deployment `name`: get rollout deployment status
+- kubectl rollout history deployment `name`: get rollout deployment history
+- kubectl rollout undo deployment `name`: rollback rollout deployment
 
 ## Networking
 - Each node has its own IP Address
@@ -60,3 +60,9 @@
 ### CMD:
 - kubectl create -f `file name`: create Service using file
 - kubectl get services: get list of services
+
+# Docker
+## CMD:
+- docker run -d --name=`name` `image`: run image with name in background
+- docker run -p `NodePort`:`port` `image`: run image in port
+- docker run --link `host name`:`container name`: link host container to other container by container name
