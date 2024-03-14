@@ -1,0 +1,25 @@
+apiVersion: apps/v1 #Version of Kubernetes API to create object
+kind: Deployment #type of object to create
+metadata: 
+  name: redis-deploy
+  labels:
+    name: redis-deploy
+    app: demo-voting-app
+spec: 
+  template:
+    metadata:
+    name: redis-pod
+    labels:
+      name: redis-pod
+      app: demo-voting-app
+  spec:
+    containers:
+    - name: redis
+      image: redis
+      ports:
+        - containerPort: 6379 # expose port in container
+  replicas: 1
+  selector: 
+    matchLabels:
+      name: redis-pod
+      app: demo-voting-app
