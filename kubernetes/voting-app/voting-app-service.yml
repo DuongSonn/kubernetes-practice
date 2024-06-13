@@ -6,11 +6,11 @@ metadata:
     name: voting-app-service
     app: demo-voting-app
 spec:
-  type: NodePort
+  type: NodePort # type of service (default is ClusterIP)
   ports:
-  - targetPort: 80 #default value is port - this is POD port
-    port: 80 # service port\
-    nodePort: 30004
+    - targetPort: 80 #default value is port - this is POD port
+      port: 80 # service port\
+      nodePort: 30004
   selector: # label data of the port
     name: voting-app-pod
     app: demo-voting-app
