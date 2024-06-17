@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka
+  labels:
+    name: kafka-service
+    app: local-app
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 9092 #default value is port - this is POD port
+      port: 9092 # service port
+      nodePort: 30992
+  selector: # label data of the port
+    name: kafka-pod
+    app: local-app

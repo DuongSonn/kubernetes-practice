@@ -1,0 +1,26 @@
+apiVersion: apps/v1 #Version of Kubernetes API to create object
+kind: Deployment #type of object to create
+metadata:
+  name: kafka-deploy
+  labels:
+    name: kafka-deploy
+    app: local-app
+spec:
+  template:
+    metadata:
+      name: kafka-pod
+      labels:
+        name: kafka-pod
+        app: local-app
+    spec:
+      containers:
+        - name: kafka
+          image: kafka
+          ports:
+            - containerPort: 9092
+
+  replicas: 1
+  selector:
+    matchLabels:
+      name: kafka-pod
+      app: local-app

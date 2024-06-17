@@ -11,8 +11,6 @@ spec:
       image: mysql
       ports:
         - containerPort: 3306
-          port: 3306
-          nodePort: 33006
       env:
         - name: MYSQL_ROOT_PASSWORD
           value: "123456"

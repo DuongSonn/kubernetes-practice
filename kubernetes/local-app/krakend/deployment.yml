@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: krakend-deploy
+  labels:
+    name: krakend-deploy
+    app: local-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: krakend-pod
+        labels:
+          name: krakend-pod
+          app: local-app
+    spec:
+      containers:
+        - name: krakend
+          image: krakend
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Never
+          command: ["/usr/bin/krakend"]
+          args: ["run", "-d", "-c", "/etc/krakend/krakend.json", "-p", "8080"]
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+          env:
+            - name: KRAKEND_PORT
+              value: "8080"
+  selector:
+    matchLabels:
+      name: krakend-pod
+      app: local-app
