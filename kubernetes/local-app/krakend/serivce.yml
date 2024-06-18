@@ -5,9 +5,15 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: http
-      port: 8000
+    - name: krakend-http
+      port: 8080
       targetPort: 8080
+      nodePort: 30880
+      protocol: TCP
+    - name: krakend-designer-http
+      port: 8081
+      targetPort: 8081
+      nodePort: 30881
       protocol: TCP
   selector: # label data of the port
     name: krakend-pod

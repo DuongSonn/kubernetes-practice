@@ -14,7 +14,7 @@
 - kubectl get nodes: get list nodes
 - kubectl get nodes -o wide: get list nods with more info
 - kubectl get all: get all created object
-  
+
 ## Pod
 
 ### Definition
