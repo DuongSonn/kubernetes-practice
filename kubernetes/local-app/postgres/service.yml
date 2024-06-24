@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  labels:
+    name: postgres-service
+    app: local-app
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 5432 #default value is port - this is POD port
+      port: 5432 # service port
+      nodePort: 30543
+  selector: # label data of the port
+    name: postgres-pod
+    app: local-app

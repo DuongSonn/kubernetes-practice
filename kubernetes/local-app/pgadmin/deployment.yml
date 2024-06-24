@@ -1,0 +1,37 @@
+apiVersion: apps/v1 #Version of Kubernetes API to create object
+kind: Deployment #type of object to create
+metadata:
+  name: pgadmin-deploy
+  labels:
+    name: pgadmin-deploy
+    app: local-app
+spec:
+  template:
+    metadata:
+      name: pgadmin-pod
+      labels:
+        name: pgadmin-pod
+        app: local-app
+    spec:
+      containers:
+        - name: pgadmin
+          image: dpage/pgadmin4
+          ports:
+            - containerPort: 80
+          env:
+            - name: PGADMIN_DEFAULT_PASSWORD
+              value: "123456"
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: "root@gmail.com"
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql
+      volumes:
+        - name: postgres-storage
+          hostPath:
+            path: /Users/duongson/Desktop/Kubernetes/volumes/postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      name: pgadmin-pod
+      app: local-app

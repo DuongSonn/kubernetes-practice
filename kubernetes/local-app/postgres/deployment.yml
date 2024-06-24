@@ -1,0 +1,35 @@
+apiVersion: apps/v1 #Version of Kubernetes API to create object
+kind: Deployment #type of object to create
+metadata:
+  name: postgres-deploy
+  labels:
+    name: postgres-deploy
+    app: local-app
+spec:
+  template:
+    metadata:
+      name: postgres-pod
+      labels:
+        name: postgres-pod
+        app: local-app
+    spec:
+      containers:
+        - name: postgres
+          image: postgres
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD
+              value: "123456"
+          volumeMounts:
+            - name: postgres-persistent-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-persistent-storage
+          hostPath:
+            path: /Users/duongson/Desktop/Kubernetes/volumes/postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      name: postgres-pod
+      app: local-app
