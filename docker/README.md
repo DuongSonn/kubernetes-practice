@@ -63,8 +63,7 @@
 - docker run -v `volume name`:`volume path` `image name`: run a container from a image with a named volume
 - docker run -v `volume path` `image name`: run a container from a image with an anonymous volume
 - docker run --env-file `path to env file` `image name`: run a container from a image using env file
-- docker run --env `env name`=`env value`  `image name`: run a container from a image using env
-  
+- docker run --env `env name`=`env value` `image name`: run a container from a image using env
 - docker start `container name/container id`: restart a stopped container in detach mode
 - docker start -a `container name/container id`: restart a stopped container in attach mode
 - docker start -a -i `container name/container id`: restart a stopped container in attach mode and you can interact with the container
